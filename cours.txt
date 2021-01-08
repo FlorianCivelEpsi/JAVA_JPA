@@ -1,0 +1,5 @@
+DOC SUR JPA ET ORM à voir !
+
+JPA 2.2
+
+
