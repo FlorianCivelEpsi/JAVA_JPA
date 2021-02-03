@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "CLIENT")
 public class Client implements Serializable {
 
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -24,14 +24,14 @@ public class Client implements Serializable {
 
     public Client() {
     }
-
+/*
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
+    } */
 
     public String getNom() {
         return nom;
