@@ -4,6 +4,8 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 @Entity
 @Table(name = "LIVRE")
 public class Livre implements Serializable {
@@ -16,6 +18,13 @@ public class Livre implements Serializable {
 
     @Column(name = "AUTEUR")
     private String auteur;
+
+    @ManyToMany
+    @JoinTable(name= "COMPO",
+            joinColumns = @JoinColumn(name= "ID_LIV",referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "ID_EMP",referencedColumnName = "ID")
+    )
+    private Set<Emprunt> emprunt;
 
     public Livre(){
     }

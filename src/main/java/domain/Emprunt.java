@@ -4,6 +4,7 @@ package domain;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "EMPRUNT")
@@ -23,6 +24,16 @@ public class Emprunt implements Serializable {
 
     @Column(name = "ID_CLIENT")
     private int id_client;
+
+    @ManyToOne
+    @JoinColumn(name= "ID")
+    private Client client;
+
+    @ManyToMany(mappedBy = "emprunt")
+    private Set<Livre> livre;
+
+
+
 
     public Emprunt() {
     }
