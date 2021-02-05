@@ -26,6 +26,7 @@ public class Livre implements Serializable {
     )
     private Set<Emprunt> emprunt;
 
+
     public Livre(){
     }
 

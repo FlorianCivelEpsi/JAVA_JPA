@@ -22,14 +22,13 @@ public class TestBibliotheque {
         Livre l1 = em.find(Livre.class, 4);
         System.out.println(l1.toString());
 
-        List liste = null;
-        liste = em.createNativeQuery("select * from LIVRE", Livre.class).getResultList();
+        List<Livre> liste = null;
+        liste = em.createQuery("from Livre", Livre.class).getResultList();
         System.out.println(liste.toString());
 
-        List liste2 = null;
-        liste2 = em.createNativeQuery("select * from EMPRUNT WHERE ID_CLIENT = 2", Emprunt.class).getResultList();
+        List<Emprunt> liste2 = null;
+        liste2 = em.createQuery("from Emprunt WHERE client.id = 2", Emprunt.class).getResultList();
         System.out.println(liste2.toString());
-
 
 
 
